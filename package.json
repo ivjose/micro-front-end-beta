@@ -1,0 +1,25 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^3.19.0"
+  },
+  "scripts": {
+    "app-core": "lerna run start --scope=app-core",
+    "app-snps": "lerna run start --scope=app-snps",
+    "app-map-mngt": "lerna run start --scope=app-map-mngt",
+    "app-acal": "lerna run start --scope=app-acal",
+    "app-admin": "lerna run start --scope=app-admin",
+    "app-pos": "lerna run start --scope=app-pos",
+    "build": "lerna run build",
+    "clean": "yarn clean:artifacts && yarn clean:packages && yarn clean:root",
+    "clean:artifacts": "lerna run clean --parallel",
+    "clean:packages": "lerna clean --yes",
+    "clean:root": "rm -rf node_modules"
+  }
+}
