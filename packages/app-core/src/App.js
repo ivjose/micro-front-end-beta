@@ -7,13 +7,20 @@ import { Routes } from './routeConfig';
 
 import './App.css';
 
-const AppCore = () => <div>App Core</div>;
+const AppCore = ({ history }) => (
+  <div>
+    <Button type="primary">Button</Button>
+  </div>
+);
 
 function App() {
+  console.log('DDDDDDDDDDDDD');
+
   return (
     <BrowserRouter>
       <>
         <AppHeader />
+
         <Switch>
           <Route exact path="/" component={AppCore} />
 

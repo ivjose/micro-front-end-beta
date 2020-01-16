@@ -10,6 +10,7 @@
     "lerna": "^3.19.0"
   },
   "scripts": {
+    "bootsrap": "lerna bootstrap",
     "app-core": "lerna run start --scope=app-core",
     "app-snps": "lerna run start --scope=app-snps",
     "app-map-mngt": "lerna run start --scope=app-map-mngt",
