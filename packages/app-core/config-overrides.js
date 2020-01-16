@@ -1,3 +1,3 @@
-const configOverrides = require("../../config-overrides");
+const configOverrides = require('../../config-overrides');
 
 module.exports = configOverrides;

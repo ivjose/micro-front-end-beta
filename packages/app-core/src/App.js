@@ -1,20 +1,18 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Button } from "antd";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import MicroFrontend from "./MicroFrontend";
-import AppHeader from "./AppHeader";
-import { Routes } from "./routeConfig";
+import MicroFrontend from './MicroFrontend';
+import AppHeader from './AppHeader';
+import { Routes } from './routeConfig';
 
-import logo from "./logo.svg";
-import "./App.css";
+import './App.css';
 
-const AppCore = ({ history }) => <div>App Core</div>;
+const AppCore = () => <div>App Core</div>;
 
 function App() {
   return (
     <BrowserRouter>
-      <React.Fragment>
+      <>
         <AppHeader />
         <Switch>
           <Route exact path="/" component={AppCore} />
@@ -38,7 +36,7 @@ function App() {
             render={props => <Dashboard {...props} isAuthed={true} />}
           /> */}
         </Switch>
-      </React.Fragment>
+      </>
     </BrowserRouter>
   );
 }
