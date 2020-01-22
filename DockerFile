@@ -1,0 +1,27 @@
+FROM node:12.13.1-alpine
+
+RUN apk add --no-cache bash
+RUN apk add --no-cache yarn
+
+ARG buildno
+ARG gitcommithash
+
+RUN echo "Build number": $buildno
+RUN echo "Based on commit": $gitcommithash 
+
+RUN npm i -g lerna
+
+RUN mkdir -p /usr/src/fe-mfa
+WORKDIR /usr/src/fe-mfa
+COPY . ./
+RUN lerna bootstrap
+RUN ls
+
+RUN echo "TEST DONE"
+
+# CMD ["lerna", "bootstrap"]
+
+
+
+
+# CMD ["lerna", "bootstrap"]

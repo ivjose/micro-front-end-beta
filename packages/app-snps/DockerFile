@@ -1,0 +1,25 @@
+FROM node:12.13.1-alpine
+
+RUN apk add --no-cache bash
+RUN apk add --no-cache yarn
+
+ARG buildno
+ARG gitcommithash
+
+RUN echo "Build number": $buildno
+RUN echo "Based on commit DDD": $gitcommithash 
+
+RUN ls
+
+RUN mkdir -p /usr/src/app-snps
+WORKDIR /usr/src/app-snps
+
+RUN ls
+# COPY . .
+
+# RUN mkdir -p /app-snps
+# WORKDIR /app-snps
+# COPY . ./
+RUN yarn build
+
+CMD ["yarn", "build"]
